@@ -244,5 +244,4 @@ def phonk(request):
         obj=Smusic.objects.filter(genre__icontains='phonk')
         return render(request,'phonk.html',{'obj':obj})
 
-def add(request):
-    pass
+

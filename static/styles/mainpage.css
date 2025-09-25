@@ -1,0 +1,21 @@
+.body{
+    background-color: bisque;
+}
+
+
+.headdiv{
+    margin-left: 30vw;
+}
+
+.maindiv{
+    display: flex;
+    margin-left: 30vw;
+
+}
+.maindiv h3{
+    margin-left: 10vw;
+}
+.maindiv a{
+    text-decoration: none;
+    font-size: 2vw;
+}

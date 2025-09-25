@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Search Result</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "/styles/search.css" %}'>
+    <script src='main.js'></script>
+</head>
+<form method="post">
+    {% csrf_token %}
+<body class="body">
+    <div class="headdiv">
+        <h3>Search Results</h3>
+    </div>
+    <div class="search">
+        <input type="search" name="search" placeholder="Search a Song">
+    </div>
+    <div class="maindiv">
+        
+        {% if obj %}
+        {% for i in obj %}
+        <div class="subdiv">
+            <a href="{% url 'detail' i.songid i.genre %}"><img src="{{i.image.url}}"></a>
+            <h3>{{i.songname}}</h3>
+            <p>{{i.singername}}</p>
+
+        </div>
+        {% endfor %}
+        {% endif %}
+
+       
+        </form>
+    
+</body>
+</html>

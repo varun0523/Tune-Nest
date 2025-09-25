@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tune Nest</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "/styles/select.css" %}'>
+    <script src='main.js'></script>
+</head>
+<form method="post">
+    {% csrf_token %}
+
+<body class="body">
+    
+    <div class="search">
+        <label>
+            <input type="search" name="search" placeholder="Search by Songs,Genre,Actors">
+            
+        
+        </label>
+    </div>
+    <div class="login">
+        <h3><a href="{% url 'userlogout' %}">LogOut</a></h3>
+    </div>
+
+   
+
+    
+    <div class="info">
+         {% if request.user.is_authenticated %}
+         <p> Hi ! {{request.user.username}} Welcome Back</p>
+          {% endif %}
+    </div>
+   
+
+
+    <div class="mdiv">
+        <div class="mldiv">
+            <a href="{% url 'likepage' %}"><h3>Liked Songs</h3></a>
+        </div>
+        <div class="mrdiv">
+            <a href="#"><h3>Recent Songs</h3></a>
+        </div>
+        <div class="mpdiv">
+            <a href="{% url 'trending' %}"><h3>Trending Now</h3></a>
+        </div>
+        <div class="mfdiv">
+            <a href="{% url 'phonk' %}"><h3>Phonk Songs</h3></a>
+        </div>
+
+    </div>
+
+
+
+
+    <h2 class="d">New Releases For You</h2>
+    <div class="tsongs">
+        {% if trending %}
+        {% for i in trending %}
+        <div class="subtsongs">
+            <p><a href="{% url 'detail' i.songid  i.genre %}"><img src="{{i.image.url}}"></a></p>
+            <h4>{{i.songname}}</h4>
+            <p>{{i.singername}}</p>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+
+
+
+
+
+
+
+    <h2 class="d">Devotional Songs</h2>
+    <div class="ssongs">
+        {% if sobj %}
+        {% for i in sobj %}
+        <div class="subssongs">
+            <p><a href="{% url 'detail' i.songid  i.genre %}"><img src="{{i.image.url}}"></a></p>
+            <h4>{{i.songname}}</h4>
+            <p>{{i.singername}}</p>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+
+
+
+
+    <h2>Liked Songs</h2>
+    <div class="lsongs">
+        
+        {% if obj2 %}
+        
+        {% for i in obj2 %}
+        <div class="sublsongs">
+            <p><a href="{% url 'detail' i.songid  i.genre %}"><img src="{{i.image.url}}"></a></p>
+            <h4>{{i.songname}}</h4>
+            <p>{{i.singername}}</p>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+
+    <h2>Singers</h2>
+    <div class="singersongs">
+        {% if singer %}
+        {% for i in singer %}
+        <div class="singersubdiv">
+            <a href='{% url "singerdetail" i.singerid i.singername %}'><img src="{{i.image.url}}"></a>
+            <h3>{{i.singername}}</h3>
+            
+
+        </div>
+        {% endfor %}
+        {% endif %}
+        
+
+    </div>
+
+
+
+
+
+    <h2>Phonk Songs</h2>
+    <div class="psongs">
+        {% if pobj %}
+        
+        {% for i in pobj %}
+        <div class="psubsongs">
+            <p><a href="{% url 'detail' i.songid i.genre %}"><img src="{{i.image.url}}"></a></p>
+            <h4>{{i.songname}}</h4>
+            <p>{{i.singername}}</p>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+
+
+    <h2>Folk Songs</h2>
+    <div class="fsongs">
+        {% if fobj %}
+        {% for i in fobj %}
+        <div class="fsubsongs">
+           <p><a href="{% url 'detail' i.songid  i.genre %}"><img src="{{i.image.url}}"></a></p>
+            <h4>{{i.songname}}</h4>
+            <p>{{i.singername}}</p>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Admin Signup</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "/styles/userlogin.css" %}'>
+    <script src='main.js'></script>
+</head>
+<body class="body">
+     <form method="post">
+        {% csrf_token %}
+   
+    <div class="maindiv">
+        <div class="tablediv">
+            <h2>Admin Sign Up</h2>
+            <labe>
+                
+                    <input type="text" name="username" placeholder="User Name" required>
+            </labe>
+            <label>
+                
+                    <input type="password" name="password" placeholder="Password" required>
+            </label>
+            <label>
+                <input type="email" name="email" placeholder="Email" required>
+            </label>
+            
+            <label>
+                <input type="submit" value="Sign Up">
+            </label>
+        
+        </div>
+        <div class="signup">
+            <h1>Already Have an account ?</h1>
+            <h3>Login to your account!</h3>
+            <a href="{% url 'adminlogin' %}"><h3>Login</h3></a>
+
+        </div>
+       
+    </div>
+    </form>
+    <div class="msg">
+    {% if error %}
+    <p>{{error}}</p>
+    {% endif %}
+    </div>
+</body>
+</html>

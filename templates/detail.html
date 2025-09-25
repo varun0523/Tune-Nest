@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Playing</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "/styles/detail.css" %}'>
+    <script src='main.js'></script>
+</head>
+<body class="body">
+    <div class="dmaindiv">
+        {% if obj %}
+        {% for i in obj %}
+        <div class="ddiv">
+            <img src="{{i.image.url}}">
+            <h2>{{i.songname}}</h2>
+            
+            
+        </div>
+
+        <div class="songdiv">
+            
+            <audio controls><source src="{{i.song.url}}"></audio>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+
+    <div class="r">
+        <h3>Related Songs</h3>
+    </div>
+
+
+
+    <div class="rdiv">
+        {% if obj1 %}
+        {% for i in obj1 %}
+        <div class="rsubdiv">
+           
+            <a song href="{% url 'detail' i.songid i.genre %}"><img src="{{i.image.url}}"></a>
+            <a class="l" href="{% url 'like' i.songid %}">👍</a>
+            <a class="d" href="{% url 'dislike' i.songid %}">👎</a>
+            <a id="song" href='{% url "detail" i.songid i.genre %}'><h4>{{i.songname}}-----{{i.singername}}</h4></a>
+            
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    
+</body>
+</html>

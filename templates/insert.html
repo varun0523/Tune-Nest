@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Add Music</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "/styles/insert.css" %}'>
+    <script src='main.js'></script>
+</head>
+<body class="body">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="navbar">
+            <a href="{% url 'adminlogin' %}"><h3>LogOut</h3></a>
+            <a href="#"><h3>PodCast</h3></a>
+        </div>
+        <div class="headdiv">
+            <h2>Upload a Song</h2>
+        </div>
+        <div class="maindiv">
+            <div class="tablediv">
+    <table>
+        <tr>
+            <th>Enter song id :</th>
+            <td><input type="text" name="songid" placeholder="Song ID" required></td>
+        </tr>
+        <tr>
+            <th>Enter song name :</th>
+            <td><input type="text" name="songname" placeholder="Song Name" required></td>
+        </tr>
+        <tr>
+            <th>Enter movie name :</th>
+            <td><input type="text" name="moviename" placeholder="Movie Name" required></td>
+        </tr><tr>
+            <th>Enter genre :</th>
+            <td><input type="text" name="genre" placeholder="Genre" required></td>
+        </tr>
+        <tr>
+            <th>Enter singer name :</th>
+            <td><input type="text" name="singername" placeholder="Singer Name" required></td>
+        </tr>
+        
+        <tr>
+            <th>Upload song :</th>
+            <td><input type="file" name="song" required></td>
+        </tr>
+        <tr>
+            <th>Song image:</th>
+            <td><input type="file" name="image" required></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit"></td>
+        </tr>
+    </table>
+    </div>
+    </div>
+    </form>
+    <div>
+        {% if error %}
+        <p style="color: red;">{{error}}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static '/styles/singerdetail.css' %}">
+    <script src='main.js'></script>
+</head>
+<body class="body">
+   
+        {% if obj %}
+        {% for i in obj %}
+        <div class="imgdiv">
+            <img src="{{i.image.url}}">
+            <h2>{{i.singername}}</h2>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        <h2>Singer Related Songs</h2>
+        <div class="reldiv">
+        {% if obj1 %}
+        {% for i in obj1 %}
+        <div class="songsdiv">
+            <a href="{% url 'detail' i.songid i.genre %}"><img src="{{i.image.url}}"></a>
+            <a class="l" href="{% url 'like' i.songid %}">👍</a>
+            <a class="d" href="{% url 'dislike' i.songid %}">👎</a>
+            <a href="{% url 'detail' i.songid i.genre %}"><h2>{{i.songname}}</h2></a>
+            <a href="{% url 'detail' i.songid i.genre %}"><h2>{{i.moviename}}</h2></a>
+
+        </div>
+        {% endfor %}
+        {% endif %}
+       </div>
+
+    
+</body>
+</html>

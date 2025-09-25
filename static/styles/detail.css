@@ -1,0 +1,125 @@
+.body{
+    /*background-color: rgb(71, 70, 70);*/
+    background: linear-gradient(rgba(7, 165, 205, 0.5),rgba(8, 209, 192, 0.5));
+}
+.dmaindiv .ddiv{
+    width: 100vw;
+    height:50vh;
+    box-shadow: 4px,4px,4px,10px white;
+    font-size: 1.2vw;
+    background: linear-gradient(rgba(7, 165, 205, 0.5),rgba(8, 209, 192, 0.5));
+    background-color: rgb(71, 70, 70);
+    margin-top: -2vh;
+    margin-left: -2vw;
+}
+.dmaindiv .ddiv img{
+    margin-top: 5vh;
+    margin-left: 37vw;
+    width: 30vw;
+    height: 30vh;
+    border-radius: 3vw;
+    
+}
+.dmaindiv .ddiv h2{
+    font-size: 2vw;
+    margin-left: 43vw;
+    margin-top: 0vh;
+    color: white;
+}
+.dmaindiv .songdiv{
+    justify-content: center;
+    align-self: center;
+    width: 80vw;
+    height: 10vh;
+    margin-top: -3vh;
+    margin-left: 6vw;
+    
+    box-shadow: 4px,4px,4px,10px white;
+}
+.dmaindiv .songdiv audio{
+    margin-left: 2vw;
+    height: 8vh;
+    width: 45vw;
+    margin-top: -15vh;
+    border-radius: 10px;
+    margin-left: 23vw;
+    box-shadow: 4px,4px,4px,10px white;
+}
+
+
+
+
+
+.r h3{
+    color: black;
+    margin-left: -80vw;
+    margin-top: -5vh;
+
+}
+
+
+
+.rdiv{
+    display: grid;
+    width: 80vw;
+    height: 40vh;
+    margin-top: -2vh;
+    margin-left: 10vw;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.35),inset 4px 10px 10px rgba(29, 28, 28, 0.25);
+    background:linear-gradient(rgba(169, 238, 244, 0.1),rgba(229, 122, 245, 0.5));;
+}
+.rdiv::-webkit-scrollbar{
+    display: none;
+}
+.rdiv .rsubdiv{
+    width: 80vw;
+    height: 10vh;
+    background: linear-gradient(rgba(9, 159, 172, 0.1),rgba(229, 122, 245, 0.5));
+    margin-top: 3vh;
+    color: white;
+    text-decoration: none;
+}
+.rdiv .rsubdiv:hover{
+    /*box-shadow: 0px 0px 4px 10px rgba(0, 0, 0, 0.25);*/
+    background-color: rgb(118, 116, 116);
+}
+.rdiv .rsubdiv img{
+    width: 10%;
+    height: 100%;
+    
+}
+.rdiv .rsubdiv a  h4{
+    display: inline;
+    margin-top: 10vh;
+    margin-left: 3vw;
+    font-size: 1.5vw;
+}
+.rdiv .rsubdiv .l{
+    margin-left: 0vw;
+    
+}
+.rdiv .rsubdiv a{
+    text-decoration: none;
+    color: black;
+    font-size: 2vw;
+}
+.rdiv .rsubdiv .d{
+    margin-left: 1vw;
+    text-decoration: none;
+    color: black;
+    font-size: 2vw;
+}
+
+
+
+
+.r{
+    margin-left: 20vw;
+    color: black;
+    text-align: center;
+}
+.r h3{
+    font-size: 2vw;
+}

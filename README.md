@@ -6,15 +6,11 @@ Features:
 
 User Authentication – Sign up, log in, and manage your account.
 
-
 Search & Filter – Quickly find songs or artists using smart filters.
-
 
 Favorites – Save and manage your favorite tracks.
 
-
 Responsive Design – Works seamlessly on desktop and mobile devices.
-
 
 Fast & Scalable – Powered by Django and SQL for efficiency and scalability.
 
@@ -24,12 +20,9 @@ Tech Stack:
 
 Frontend: HTML, CSS, JavaScript
 
-
 Backend: Python (Django Framework)
 
-
 Database: SQL (Relational Database)
-
 
 Authentication: Django built-in auth system
 
